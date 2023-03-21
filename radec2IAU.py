@@ -40,7 +40,7 @@ def radec2IAU(crval1, crval2):
             sign = "-"
             
         y= (int(hd1), int(m1), round(s1,1), int(hd2), int(abs(m2)), round(abs(s2),1))
-        IAUname = 'J'+("{0:02d}{1:02d}{2}".format(y[0], y[1],str.rjust(str(y[2]),4,'0'))) + sign + ("{0:03d}{1:02d}{2}".format( y[3], y[4],str.rjust(str(y[5]),4,'0')))
+        IAUname = 'J'+("{0:02d}{1:02d}{2}".format(y[0], y[1],str.rjust(str(y[2]),4,'0'))) + sign + ("{0:02d}{1:02d}{2}".format( abs(y[3]), y[4],str.rjust(str(y[5]),4,'0')))
         return IAUname, y, crval1, crval2   
     else:
         error = 'wrong input values or not in range'
